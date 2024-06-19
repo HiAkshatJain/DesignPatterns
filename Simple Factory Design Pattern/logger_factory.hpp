@@ -4,7 +4,9 @@
 #include "info_logger.hpp"
 #include "error_logger.hpp"
 
-class LoggerFactory{
-    public:
-        static ILogger* createLogger(LogLevel defined);
+// Factory class for creating Logger objects based on log level
+class LoggerFactory {
+public:
+    // Factory method to create a Logger based on the specified log level
+    static ILogger* createLogger(LogLevel pLogLevel);
 };

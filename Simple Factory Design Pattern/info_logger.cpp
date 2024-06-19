@@ -1,5 +1,8 @@
 #include "info_logger.hpp"
 
+// Implementation of the log function for InfoLogger
 void InfoLogger::log(const string& msg) {
-    cout<<"INFO : "<< msg <<endl;
+    // Print the debug message to the standard output with a "INFO" prefix
+    cout<<"INFO : "<<msg<<endl;
 }
+

@@ -1,11 +1,15 @@
 #include "logger_factory.hpp"
 
-ILogger* LoggerFactory::createLogger(LogLevel defined) {
-    if(defined == LogLevel::DEBUG)
-        return new DebugLogger();
-    if(defined == LogLevel::INFO)
-        return new InfoLogger();
-    if(defined == LogLevel::ERROR)
-        return new ErrorLogger();
-    return nullptr;
+// Implementation of the factory method to create loggers
+ILogger* LoggerFactory::createLogger(LogLevel pLogLevel) {
+    switch (pLogLevel) {
+        case LogLevel::DEBUG:
+            return new DebugLogger();
+        case LogLevel::INFO:
+            return new InfoLogger();
+        case LogLevel::ERROR:
+            return new ErrorLogger();
+        default:
+            throw invalid_argument("Unknown log level");
+    }
 }
